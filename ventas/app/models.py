@@ -7,4 +7,6 @@ class Producto(models.Model):
     nombre = models.CharField(max_length=50)
     precio = models.FloatField(default= 0)
     
+    class Meta:
+        db_table = "PRODUCTO"
      
