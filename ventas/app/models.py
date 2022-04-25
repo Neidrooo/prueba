@@ -18,4 +18,6 @@ class Producto(models.Model):
     categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE)
     class Meta:
         db_table = "PRODUCTO"
-
+        def __str__(self):
+            return self.nombre
+            
