@@ -14,3 +14,7 @@ def nombreProducto(request,Producto_id):
 def mostrarTemplate(request):
     p=Producto.objects.all()
     return render(request,'hola.html',{'productos':p})
+
+def mostrar(request):
+    productos = Producto.objects.all()
+    return render(request,'mostrar.html',{'productos':productos})
