@@ -35,7 +35,21 @@ def entrada_error(request,id):
     return render(request,'entrada_error.html',{'producto':producto})
 
 def mostrar_subconjunto(request):
-    productos = Producto.objects.all()
-    return render(request,'mostrar_subconjunto',{'productos':productos})
+    producto = Producto.objects.all()
+    return render(request,'mostrar_subconjunto.html',{'producto':producto})
 
+def formulario(request,id):
+    return render(request,'formulario.html',{'producto':producto,'productos':productos})
+
+def elegir_vistas(request):
+    productos = Producto.objects.all()
+    return render(request,'elegir_vistas.html',{'productos':productos})
+
+def guardar_bd(request,nombre):
+    try:
+        c = Categoria(nombre=nombre)
+        c.save()
+        return render(request,'guardar_bd.html')
+    except:
+        return HttpResponse('ERROR AL GUARDAR')
     

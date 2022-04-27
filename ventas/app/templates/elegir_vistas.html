@@ -1,0 +1,6 @@
+{% for i in productos %}
+    <li>
+        <a href="{%url 'app:entrada' i.id_producto%}">{{i.nombre}}</a>
+    </li>
+    
+{%endfor%}
